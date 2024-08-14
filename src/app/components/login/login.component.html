@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="buttons">
-                    <button class="createBtn" (click)="openNewAccount($event)">Create account</button>
+                    <button class="createBtn" (click)="openNewAccount($event)">{{step.button}}</button>
                     <mat-card id="newcard">
                         <div style="display: flex;flex-direction: column;  justify-content: end">
                             <div class="newcarditem">
@@ -40,7 +40,7 @@
                     </mat-card>
 
                     <button class="nextBtn" (click)="goToNextStep()"
-                        *ngIf="currentStepIndex < steps.length - 1">Next</button>
+                        *ngIf="currentStepIndex < steps.length">Next</button>
                 </div>
             </div>
 

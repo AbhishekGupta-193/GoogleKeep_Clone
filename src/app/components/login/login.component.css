@@ -2,12 +2,14 @@
     /* border: 2px solid red; */
     display: flex;
     width: 70%;
-    height: 400px;
+    height: auto;
+    /* height: 400px; */
     margin: auto;
     margin-top: 80px;
     background-color: white;
     border-radius: 25px;
     justify-content: space-between;
+    padding-bottom: 36px;
 }
 .lbox{
     /* border: 2px solid black; */
@@ -69,7 +71,7 @@ mat-form-field{
     /* border: 2px solid red; */
     display: flex;
     justify-content: flex-end;
-    height: 12%;
+    height: 40px;
     margin-top: 10%;
 }
 .createBtn{

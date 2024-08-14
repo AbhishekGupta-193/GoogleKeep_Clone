@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +9,7 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
   currentStepIndex = 0;
-
+  constructor(private location: Location) {}
   steps = [
     {
       left_title2: 'Sign in',
@@ -24,7 +26,8 @@ export class LoginComponent {
       contents: [
         { content1: 'Not your computer? Use Guest mode to sign in privately.' },
         { content2: 'Learn more about using Guest mode' }
-      ]
+      ],
+      button:'Create account'
     },
     {
       left_title2: 'Create a Google Account',
@@ -47,7 +50,8 @@ export class LoginComponent {
       contents: [
         { content1: '' },
         { content2: '' }
-      ]
+      ],
+      button:''
     },
     {
       left_title2: 'Basic information',
@@ -70,7 +74,8 @@ export class LoginComponent {
       contents: [
         { content1: '' },
         { content2: '' }
-      ]
+      ],
+      button:''
     },
     {
       left_title2: `How you'll sign in`,
@@ -87,7 +92,8 @@ export class LoginComponent {
       contents: [
         { content1: '' },
         { content2: '' }
-      ]
+      ],
+      button:''
     },
     {
       left_title2: `Create a strong password`,
@@ -111,7 +117,8 @@ export class LoginComponent {
       contents: [
         { content1: '' },
         { content2: '' }
-      ]
+      ],
+      button:''
     }
   ];
 
@@ -127,4 +134,16 @@ export class LoginComponent {
     //@ts-ignore
     document.getElementById('newcard').style.display = 'block';
   }
+
+  goBack() {
+    this.currentStepIndex--;
+    if(this.currentStepIndex<0)alert("Thamm Jaao Bhai ,piche kuch nahi hai");
+  }
+
+
+@HostListener('document:keydown.escape', ['$event'])
+handleEscape(event: KeyboardEvent) {
+  this.goBack();
+}
+
 }
