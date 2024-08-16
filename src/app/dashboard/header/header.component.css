@@ -1,0 +1,88 @@
+mat-toolbar{
+    /* border: 2px solid red; */
+    background-color: white;
+    border-bottom: 0.5px solid rgb(195, 186, 186);
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.keeplogo{
+    font-size: 30px;
+    color:rgb(139, 138, 138);
+    display: flex;
+    /* border: 2px solid black; */
+    width: 18%;
+
+}
+.searchBar{
+    display: flex;
+    padding:5px;
+    background-color: rgb(240, 233, 233);
+    border-radius: 10px;
+    margin-top: 4px;
+    /* border: 2px solid black; */
+    width: 45%;
+
+}
+.tools{
+    /* border: 2px solid blue; */
+    width: 14%;
+    display: flex;
+    justify-content: space-around;
+}
+.profile{
+    /* border: 2px solid blue; */
+    width: 15%;
+    display: flex;
+    justify-content: space-around;
+    justify-content: flex-end;
+
+}
+.profile_pic{
+    border: 1px solid grey;
+    width: 90px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 6px;
+    border-radius: 4px;
+    margin-left: 4%;
+}
+.searchinput{
+    background-color: rgb(240, 233, 233);
+    border-color:rgb(240, 233, 233);
+    border: none;
+    outline: none;
+    width:300px;
+    font-size: 20px;
+}
+.material-icons{
+    color:rgb(139, 138, 138);
+    padding: 2px 1px 2px 2px;
+    font-size:30px;
+    margin-top: 4px;
+}
+
+img{
+    /* border: 2px solid green; */
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+}
+.logo{
+    height: 45px;
+    width: 60px;
+    /* border: 2px solid green; */
+    margin-top: 3%;
+}
+.img1{
+    margin-left: 2%;
+    height: 40px;
+    width: 40px;
+}

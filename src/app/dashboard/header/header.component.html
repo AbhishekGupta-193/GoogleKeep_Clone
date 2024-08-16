@@ -1,0 +1,26 @@
+<mat-toolbar class="header">
+    <img class="img1" src="../assets/header/hamburger.svg" (click)="toggleSidebar()">
+    <span class="keeplogo">
+        <img class="logo" src="../assets/header/gKeepLogo.jpg">
+        <p style="margin-top: 6%;font-weight: 400;">Keep</p>
+    </span>
+
+    <span class="searchBar">
+        <i class='material-icons'>&#xe8b6;</i>
+        <input class="searchinput" placeholder="search" type="text" id="search" onkeyup="onSearch()" />
+    </span>
+
+    <div class="tools">
+        <img src="../assets/header/refresh.svg" alt="icon">
+        <img src="../assets/header/pause.svg" alt="icon">
+        <img src="../assets/header/settings.svg" alt="icon">
+    </div>
+    <div class="profile">
+        <img src="../assets/header/apps.svg" style="margin-top: 3% ;" alt="icon">
+        <div class="profile_pic">
+            <span>User</span>
+        <img src="../assets/header/profile.png" alt="icon" height="25px" width="25px">
+    </div>
+    </div>
+
+</mat-toolbar>

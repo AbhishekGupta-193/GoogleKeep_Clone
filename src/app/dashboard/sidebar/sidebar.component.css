@@ -1,0 +1,27 @@
+.sidenav-container{
+    /* border: 1px solid red; */
+    background-color: white;
+    width: 300px;
+    height: 570px;
+}
+.element{
+    /* border: 1px solid black; */
+    padding: 20px 0 10px 20px;
+    display: flex;
+    /* margin-top: 10px; */
+    
+}
+.element img{
+    /* border: 1px solid red; */
+    width: 25px;
+    height: 25px;
+}
+.element span{
+    /* border: 1px solid red; */
+    margin-left: 30px;
+    font-weight:500;
+}
+.element:hover{
+    background-color: rgb(246, 225, 185);
+    border-radius: 0 25px 25px 0;
+}
