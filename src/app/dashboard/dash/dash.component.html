@@ -1,0 +1,22 @@
+<!-- <app-header></app-header>
+<div style="display: flex;">
+    <app-sidebar></app-sidebar>
+    <div class="mainBody">
+        <app-write-notes (noteAdded)="onNoteAdded($event)"></app-write-notes>
+        <app-write-notes></app-write-notes>
+        <app-notes-container></app-notes-container>
+        <app-notes-container style="margin-top: 4%;" #notesContainer></app-notes-container>
+    </div>
+</div> -->
+
+<div class="parent">
+    <div class="header">
+        <app-header></app-header>
+    </div>
+    <div class="main-body">
+        <app-sidebar class="sidebar"></app-sidebar>
+        <div class="body">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

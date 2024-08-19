@@ -1,0 +1,143 @@
+.container{
+    /* border: 2px solid red; */
+    display: flex;
+    width: 70%;
+    height: auto;
+    /* height: 400px; */
+    margin: auto;
+    margin-top: 80px;
+    background-color: white;
+    border-radius: 25px;
+    justify-content: space-between;
+    padding-bottom: 36px;
+}
+.lbox{
+    /* border: 2px solid black; */
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 4%;
+    margin-left: 6%;
+}
+.logo{
+    display: flex;
+    height: 50px;
+    width: 50px;
+}
+.signIn{
+    display: flex;
+    /* border: 2px solid red; */
+    height: 22%;
+    align-items: center;
+    font-size: 32px;
+}
+.title{
+    display: flex;
+    color: #444746;
+
+}
+.rbox{
+    /* border: 2px solid black; */
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 11%;
+    margin-right: 4%;
+}
+.rbox a{
+    color: #0b57d0;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+mat-form-field{
+    width: 100%;
+}
+.hint{
+    /* border: 2px solid black; */
+    margin-bottom: 10%;
+}
+.content{
+    /* border: 2px solid red; */
+    font-size: 14px;
+    /* margin-top: 4%; */
+    color: #444746;
+    /* padding: 9px 0px 3px; */
+}
+.content_disappar{
+    display: none;
+}
+.buttons{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: flex-end;
+    height: 40px;
+    margin-top: 10%;
+}
+.createBtn{
+    /* border: none; */
+    width: 35%;
+    color: #0b57d0;
+    font-weight: bold;
+    background-color: white;
+    border: none;
+    /* height: 12%; */
+}
+#newcard{
+    display:none;
+    background-color: #e0e7f1 ;
+    width:220px;
+    position: fixed;
+    right:280px;
+    top:250px;
+    padding:10px;
+    z-index: 1000;
+    color:#1f1f1f;
+    border-radius: 20px;
+}
+.newcarditem{
+    height:30px;
+    padding:7px 0px 2.3px 10px;
+   
+}
+
+.nextBtn{
+    width: 75px;
+    margin-left: 2%;
+    border-radius: 20px;
+    background-color: #0b57d0;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.extras{
+    /* border: 2px solid red; */
+    width: 68%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1%;
+    font-size: 13px;
+}
+
+.dropdown{
+    /* border: 2px solid red; */
+    background-color: rgba(218, 211, 211, 0.192);
+    border: none;
+}
+.more{
+    display: flex;
+    width: 26%;
+    justify-content: space-between;
+    color: #444746;
+
+}
+mat-select{
+    width: 170px;
+    font-size: 14px;
+}
+mat-option{
+    font-size: 12px;
+    width: 100%;
+}

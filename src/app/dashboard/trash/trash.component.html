@@ -1,0 +1,12 @@
+<div class="title">
+    <span>Notes in Trash are deleted after 7 days.</span>
+    <a href="">Empty Trash</a>
+</div>
+<div class="notesContainer">
+    <div *ngFor="let note of notesList">
+        <div class="noteCard">
+            <span>{{note.title}}</span>
+            <span>{{note.description}}</span>
+        </div>
+    </div>
+</div>

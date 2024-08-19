@@ -1,31 +1,26 @@
-<div *ngFor="let step of steps; let i = index">
-    <div *ngIf="i === currentStepIndex">
-
+    <div *ngIf="isPasswordPage==false">
         <div class="container">
             <div class="lbox">
                 <img class="logo" src="../assets/logo.jpg" alt="logo">
-                <span class="signIn">{{step.left_title2}}</span>
-                <span class="title">{{step.left_title3}}</span>
+                <span class="signIn">Sign in</span>
+                <span class="title">Use your Google Account</span>
             </div>
             
             <div class="rbox">
-                <div class="inputs" *ngFor="let input of step.inputs">
-                <mat-form-field appearance="outline" *ngIf="i === currentStepIndex">
-                    <mat-label>{{ input.label }}</mat-label>
-                    <input matInput [type]="input.type" [(ngModel)]="input.value" [placeholder]="input.placeholder">
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput type=email placeholder="Enter your email">
                 </mat-form-field>
-                </div>
 
+                <a class="hint" href="">Forgot email?</a>
 
-                <a class="hint" href="">{{step.hint}}</a>
-
-                <div class="content" *ngFor="let content of step.contents" [ngClass]="{'content_disappar': !content.content1 && !content.content2}">
-                    <span>{{content.content1}}</span>
-                    <a href="">{{content.content2}}</a>
+                <div class="content">
+                    <span>Not your computer? Use Guest mode to sign in privately.</span>
+                    <a href="">Learn more about using Guest mode</a>
                 </div>
 
                 <div class="buttons">
-                    <button class="createBtn" (click)="openNewAccount($event)">{{step.button}}</button>
+                    <button class="createBtn" (click)="openNewAccount($event)">Create account</button>
                     <mat-card id="newcard">
                         <div style="display: flex;flex-direction: column;  justify-content: end">
                             <div class="newcarditem">
@@ -40,34 +35,83 @@
                         </div>
                     </mat-card>
 
-                    <button class="nextBtn" (click)="goToNextStep()"
-                        *ngIf="currentStepIndex < steps.length">Next</button>
+                    <button class="nextBtn" (click)="nextFunc()">Next</button>
                 </div>
             </div>
-
-
         </div>
-    </div>
-
-</div>
-<div class="extras">
-    <div class="language">
-        <mat-select placeholder="English (United States)" disableRipple>
-            <mat-option value="1">English (United States)</mat-option>
-            <mat-option value="1">English (United States)</mat-option>
-            <mat-option value="1">English (United States)</mat-option>
-            <mat-option value="1">English (United States)</mat-option>
-            <mat-option value="1">English (United States)</mat-option>
-            <mat-option value="1">English (United States)</mat-option>
-            <mat-option value="1">English (United States)</mat-option>
-            <mat-option value="1">English (United States)</mat-option>
-            <mat-option value="1">English (United States)</mat-option>
-            <mat-option value="1">English (United States)</mat-option>
-          </mat-select>
-    </div>
+    
+    <div class="extras">
+        <div class="language">
+            <mat-select placeholder="English (United States)" disableRipple>
+                <mat-option value="1">English (United States)</mat-option>
+                <mat-option value="1">English (United States)</mat-option>
+                <mat-option value="1">English (United States)</mat-option>
+                <mat-option value="1">English (United States)</mat-option>
+                <mat-option value="1">English (United States)</mat-option>
+                <mat-option value="1">English (United States)</mat-option>
+                <mat-option value="1">English (United States)</mat-option>
+                <mat-option value="1">English (United States)</mat-option>
+                <mat-option value="1">English (United States)</mat-option>
+                <mat-option value="1">English (United States)</mat-option>
+            </mat-select>
+        </div>
+        
     <div class="more">
         <span>Help</span>
         <span>Privacy</span>
         <span>Terms</span>
     </div>
+    
+</div>
+</div>
+
+
+<!-- Password Page -->
+
+    <div *ngIf="isPasswordPage==true">
+        <div class="container">
+            <div class="lbox">
+                <img class="logo" src="../assets/logo.jpg" alt="logo">
+                <span class="signIn">Sign in</span>
+                <span class="title">Use your Google Account</span>
+            </div>
+            
+            <div class="rbox">
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput type=password placeholder="Enter your password">
+                </mat-form-field>
+
+                <a class="hint" href="">Forgot password?</a>
+                <div class="buttons">
+                    <button class="nextBtn">Submit</button>
+                </div>
+            </div>
+        </div>
+    
+
+    
+    <div class="extras">
+        <div class="language">
+            <mat-select placeholder="English (United States)" disableRipple>
+                <mat-option value="1">English (United States)</mat-option>
+                <mat-option value="1">English (United States)</mat-option>
+                <mat-option value="1">English (United States)</mat-option>
+                <mat-option value="1">English (United States)</mat-option>
+                <mat-option value="1">English (United States)</mat-option>
+                <mat-option value="1">English (United States)</mat-option>
+                <mat-option value="1">English (United States)</mat-option>
+                <mat-option value="1">English (United States)</mat-option>
+                <mat-option value="1">English (United States)</mat-option>
+                <mat-option value="1">English (United States)</mat-option>
+            </mat-select>
+        </div>
+        
+    <div class="more">
+        <span>Help</span>
+        <span>Privacy</span>
+        <span>Terms</span>
+    </div>
+    
+</div>
 </div>

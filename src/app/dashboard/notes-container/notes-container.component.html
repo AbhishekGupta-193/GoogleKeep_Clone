@@ -1,1 +1,19 @@
-<p>notes-container works!</p>
+<!-- <div class="container">
+<div *ngFor="let note of notes" class="note-card">
+    {{note}}
+</div>
+</div> -->
+
+
+
+
+<!-- <p style="margin-top: 300px;"> hiiiiii</p> -->
+
+<div class="notesContainer">
+<div *ngFor="let note of notesList">
+    <div class="noteCard">
+        <span>{{note.title}}</span>
+        <span>{{note.description}}</span>
+    </div>
+</div>
+</div>

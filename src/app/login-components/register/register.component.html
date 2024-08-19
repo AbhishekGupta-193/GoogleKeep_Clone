@@ -1,0 +1,75 @@
+<div *ngFor="let step of steps; let i = index">
+    <div *ngIf="i === currentStepIndex">
+
+        <div class="container">
+            <div class="lbox">
+                <img class="logo" src="../assets/logo.jpg" alt="logo">
+                <span class="signIn">{{step.left_title2}}</span>
+                <span class="title">{{step.left_title3}}</span>
+            </div>
+            
+            <div class="rbox">
+                <div class="inputs" *ngFor="let input of step.inputs">
+                <mat-form-field appearance="outline" *ngIf="i === currentStepIndex">
+                    <mat-label>{{ input.label }}</mat-label>
+                    <input matInput [type]="input.type" [(ngModel)]="input.value" [placeholder]="input.placeholder">
+                </mat-form-field>
+                </div>
+
+
+                <a class="hint" href="">{{step.hint}}</a>
+
+                <div class="content" *ngFor="let content of step.contents" [ngClass]="{'content_disappar': !content.content1 && !content.content2}">
+                    <span>{{content.content1}}</span>
+                    <a href="">{{content.content2}}</a>
+                </div>
+
+                <div class="buttons">
+                    <button class="createBtn" (click)="openNewAccount($event)">{{step.button}}</button>
+                    <mat-card id="newcard">
+                        <div style="display: flex;flex-direction: column;  justify-content: end">
+                            <div class="newcarditem">
+                                <a>For personal use</a>
+                            </div>
+                            <div class="newcarditem">
+                                <a>For my child</a>
+                            </div>
+                            <div class="newcarditem">
+                                <a>For work and my business</a>
+                            </div>
+                        </div>
+                    </mat-card>
+
+                    <button class="nextBtn" (click)="goToNextStep()"
+                        *ngIf="currentStepIndex < steps.length">Next</button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+<div class="extras">
+    <div class="language">
+        <mat-select placeholder="English (United States)" disableRipple>
+            <mat-option value="1">English (United States)</mat-option>
+            <mat-option value="1">English (United States)</mat-option>
+            <mat-option value="1">English (United States)</mat-option>
+            <mat-option value="1">English (United States)</mat-option>
+            <mat-option value="1">English (United States)</mat-option>
+            <mat-option value="1">English (United States)</mat-option>
+            <mat-option value="1">English (United States)</mat-option>
+            <mat-option value="1">English (United States)</mat-option>
+            <mat-option value="1">English (United States)</mat-option>
+            <mat-option value="1">English (United States)</mat-option>
+          </mat-select>
+    </div>
+    <div class="more">
+        <span>Help</span>
+        <span>Privacy</span>
+        <span>Terms</span>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

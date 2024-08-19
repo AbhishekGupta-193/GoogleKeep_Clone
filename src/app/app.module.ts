@@ -18,6 +18,12 @@ import { NoteCardComponent } from './dashboard/note-card/note-card.component';
 import { NotesContainerComponent } from './dashboard/notes-container/notes-container.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule} from '@angular/material/icon';
+import { WriteNotesComponent } from './dashboard/write-notes/write-notes.component';
+import { DashComponent } from './dashboard/dash/dash.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RegisterComponent } from './login-components/register/register.component';
+import { ArchiveComponent } from './dashboard/archive/archive.component';
+import { TrashComponent } from './dashboard/trash/trash.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +32,12 @@ import { MatIconModule} from '@angular/material/icon';
     SidebarComponent,
     HeaderComponent,
     NoteCardComponent,
-    NotesContainerComponent
+    NotesContainerComponent,
+    WriteNotesComponent,
+    DashComponent,
+    RegisterComponent,
+    ArchiveComponent,
+    TrashComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +49,8 @@ import { MatIconModule} from '@angular/material/icon';
     FormsModule,
     MatCardModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
