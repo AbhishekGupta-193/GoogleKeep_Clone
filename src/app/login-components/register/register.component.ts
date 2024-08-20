@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 import { HostListener } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-register',
@@ -9,26 +11,42 @@ import { HostListener } from '@angular/core';
 })
 export class RegisterComponent {
   currentStepIndex = 0;
-  constructor(private location: Location) {}
+
+  signupForm: FormGroup;
+  firstName: string = '';
+  lastName: string = '';
+  service: string = '';
+  email: string = '';
+  password: string = '';
+
+
+  constructor(private location: Location, private formbuilder: FormBuilder, private http: HttpService) {
+    this.signupForm = formbuilder.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+      service: ['', Validators.required],
+    })
+  }
+
+  submitForm() {
+    if (this.signupForm.valid) {
+      let signupdata = this.signupForm.value
+
+      // Calling SignUp() from services with required headers
+      this.http.SignUp(signupdata).subscribe(response => {
+        console.log("Success");
+        console.log(response);
+      })
+    }
+    else {
+      console.log("signupForm is not valid")
+    }
+  }
+
+
   steps = [
-    // {
-    //   left_title2: 'Sign in',
-    //   left_title3: 'Use your Google Account',
-    //   inputs: [
-    //     {
-    //       label: 'Email',
-    //       type: 'email',
-    //       placeholder: 'Enter your email',
-    //       value: '',
-    //     }
-    //   ],
-    //   hint: 'Forgot email?',
-    //   contents: [
-    //     { content1: 'Not your computer? Use Guest mode to sign in privately.' },
-    //     { content2: 'Learn more about using Guest mode' }
-    //   ],
-    //   button:'Create account'
-    // },
     {
       left_title2: 'Create a Google Account',
       left_title3: 'Enter your name',
@@ -37,13 +55,15 @@ export class RegisterComponent {
           label: 'First name',
           type: 'text',
           placeholder: 'First name',
-          value: ''
+          value: '',
+          parameter: 'firstName'
         },
         {
           label: 'Last name',
           type: 'text',
           placeholder: 'Last name (optional)',
-          value: ''
+          value: '',
+          parameter: 'lastName'
         }
       ],
       hint: '',
@@ -51,7 +71,7 @@ export class RegisterComponent {
         { content1: '' },
         { content2: '' }
       ],
-      button:''
+      button: ''
     },
     {
       left_title2: 'Basic information',
@@ -59,15 +79,10 @@ export class RegisterComponent {
       inputs: [
         {
           label: 'DOB',
-          type: 'date',
+          type: 'text',
           placeholder: 'Enter your DOB',
           value: '',
-        },
-        {
-          label: 'Gender',
-          type: 'text',
-          placeholder: 'Gender',
-          value: '',
+          parameter: 'service'
         }
       ],
       hint: 'Why we ask for birthday and gender',
@@ -75,17 +90,18 @@ export class RegisterComponent {
         { content1: '' },
         { content2: '' }
       ],
-      button:''
+      button: ''
     },
     {
       left_title2: `How you'll sign in`,
       left_title3: 'Enter your birthday and gender',
       inputs: [
         {
-          label: 'Username',
-          type: 'text',
+          label: 'Email',
+          type: 'email',
           placeholder: 'Choose a username',
           value: '',
+          parameter: 'email'
         }
       ],
       hint: 'You can use letters,numbers & periods',
@@ -93,7 +109,7 @@ export class RegisterComponent {
         { content1: '' },
         { content2: '' }
       ],
-      button:''
+      button: ''
     },
     {
       left_title2: `Create a strong password`,
@@ -104,12 +120,7 @@ export class RegisterComponent {
           type: 'password',
           placeholder: 'Create a password',
           value: '',
-        },
-        {
-          label: 'Confirm',
-          type: 'password',
-          placeholder: 'Confirm',
-          value: '',
+          parameter: 'password'
         }
       ],
 
@@ -118,7 +129,7 @@ export class RegisterComponent {
         { content1: '' },
         { content2: '' }
       ],
-      button:''
+      button: 'Submit'
     }
   ];
 
@@ -137,13 +148,12 @@ export class RegisterComponent {
 
   goBack() {
     this.currentStepIndex--;
-    if(this.currentStepIndex<0)alert("Thamm Jaao Bhai ,piche kuch nahi hai");
+    if (this.currentStepIndex < 0) alert("Thamm Jaao Bhai ,piche kuch nahi hai");
   }
 
-
-@HostListener('document:keydown.escape', ['$event'])
-handleEscape(event: KeyboardEvent) {
-  this.goBack();
-}
+  @HostListener('document:keydown.escape', ['$event'])
+  handleEscape(event: KeyboardEvent) {
+    this.goBack();
+  }
 
 }
