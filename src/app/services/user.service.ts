@@ -6,6 +6,7 @@ import { HttpService } from './http.service';
 })
 export class UserService {
   constructor(private http:HttpService) { }
-    
+  
+    //to be used...
  
 }

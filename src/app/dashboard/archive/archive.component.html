@@ -1,8 +1,24 @@
+
 <div class="notesContainer">
     <div *ngFor="let note of notesList">
         <div class="noteCard">
-            <span>{{note.title}}</span>
-            <span>{{note.description}}</span>
+            <div class="contents">
+                <div class="content">
+                    <span>{{note.title}}</span>
+                    <span>{{note.description}}</span>
+                </div>
+                <div class="pinned">
+                    <img src="../assets/noteCard/pinned.svg">
+                </div>
+            </div>
+            <div class="bottom">
+                <img src="../assets/noteCard/alert.svg">
+                <img src="../assets/noteCard/add.svg">
+                <img src="../assets/noteCard/palette.svg">
+                <img src="../assets/noteCard/image.svg">
+                <img src="../assets/noteCard/archive.svg">
+                <img src="../assets/noteCard/verticalDots.svg">
+            </div>
         </div>
     </div>
 </div>

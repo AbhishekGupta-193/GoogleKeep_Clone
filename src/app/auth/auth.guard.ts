@@ -5,7 +5,7 @@ export const authGuard: CanActivateFn = () => {
   let _router = inject(Router);
   
   if (localStorage.getItem('id')) {
-    alert("Welcome to Dashboard!");
+    // alert("Welcome to Dashboard!");
     return true;
   }
   else {
