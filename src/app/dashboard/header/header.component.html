@@ -19,7 +19,11 @@
     <div class="profile">
         <img src="../assets/header/apps.svg" style="margin-top: 3% ;" alt="icon">
         <div class="profile_pic">
-            <span>User</span>
+            <!-- <span>User</span> -->
+             <select (change)="onSelectChange($event)" >
+                <option value="" disabled selected hidden>Select an option</option>
+                <option value="logout" (click)="logout()">Log Out</option>
+             </select>
         <img src="../assets/header/profile.png" alt="icon" height="25px" width="25px">
     </div>
     </div>

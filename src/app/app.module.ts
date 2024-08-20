@@ -26,6 +26,7 @@ import { TrashComponent } from './dashboard/trash/trash.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,

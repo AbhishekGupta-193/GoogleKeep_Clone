@@ -53,6 +53,14 @@ mat-toolbar{
     border-radius: 4px;
     margin-left: 4%;
 }
+.profile_pic select{
+    /* border: 2px solid red; */
+    width: 60px;
+    outline: none;
+    border: none;
+}
+
+
 .searchinput{
     background-color: rgb(240, 233, 233);
     border-color:rgb(240, 233, 233);
