@@ -14,7 +14,6 @@ import { FormsModule } from '@angular/forms';
 import { MatCardModule} from '@angular/material/card';
 import { SidebarComponent } from './dashboard/sidebar/sidebar.component';
 import { HeaderComponent } from './dashboard/header/header.component';
-import { NoteCardComponent } from './dashboard/note-card/note-card.component';
 import { NotesContainerComponent } from './dashboard/notes-container/notes-container.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule} from '@angular/material/icon';
@@ -25,13 +24,14 @@ import { RegisterComponent } from './login-components/register/register.componen
 import { ArchiveComponent } from './dashboard/archive/archive.component';
 import { TrashComponent } from './dashboard/trash/trash.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SidebarComponent,
     HeaderComponent,
-    NoteCardComponent,
     NotesContainerComponent,
     WriteNotesComponent,
     DashComponent,
@@ -50,7 +50,8 @@ import { TrashComponent } from './dashboard/trash/trash.component';
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

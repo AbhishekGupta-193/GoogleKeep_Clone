@@ -1,15 +1,22 @@
-    <div *ngIf="isPasswordPage==false">
-        <div class="container">
-            <div class="lbox">
-                <img class="logo" src="../assets/logo.jpg" alt="logo">
-                <span class="signIn">Sign in</span>
-                <span class="title">Use your Google Account</span>
-            </div>
-            
-            <div class="rbox">
+<div>
+    <div class="container">
+        <div class="lbox">
+            <img class="logo" src="../assets/logo.jpg" alt="logo">
+            <span class="signIn">Sign in</span>
+            <span class="title">Use your Google Account</span>
+        </div>
+
+        <div class="rbox">
+
+
+            <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
                 <mat-form-field appearance="outline">
                     <mat-label>Email</mat-label>
-                    <input matInput type=email placeholder="Enter your email">
+                    <input  matInput type=email placeholder="Enter your email" formControlName="email" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput type=email placeholder="Enter your email" formControlName="password" required>
                 </mat-form-field>
 
                 <a class="hint" href="">Forgot email?</a>
@@ -35,11 +42,14 @@
                         </div>
                     </mat-card>
 
-                    <button class="nextBtn" (click)="nextFunc()">Next</button>
+                    <button class="nextBtn" [disabled]="!loginForm.valid">Submit</button>
                 </div>
-            </div>
+            </form>
+
+
         </div>
-    
+    </div>
+
     <div class="extras">
         <div class="language">
             <mat-select placeholder="English (United States)" disableRipple>
@@ -55,20 +65,20 @@
                 <mat-option value="1">English (United States)</mat-option>
             </mat-select>
         </div>
-        
-    <div class="more">
-        <span>Help</span>
-        <span>Privacy</span>
-        <span>Terms</span>
+
+        <div class="more">
+            <span>Help</span>
+            <span>Privacy</span>
+            <span>Terms</span>
+        </div>
+
     </div>
-    
-</div>
 </div>
 
 
 <!-- Password Page -->
 
-    <div *ngIf="isPasswordPage==true">
+<!-- <div *ngIf="isPasswordPage==true">
         <div class="container">
             <div class="lbox">
                 <img class="logo" src="../assets/logo.jpg" alt="logo">
@@ -114,4 +124,4 @@
     </div>
     
 </div>
-</div>
+</div> -->

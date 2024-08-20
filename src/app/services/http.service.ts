@@ -9,6 +9,14 @@ export class HttpService {
   
   getAllNotes(){
     console.log("http is working");
-    return this.http.get("https://fundoonotes.incubation.bridgelabz.com/api/notes/getNotesList?access_token=7iCJEpYTdL5h3OAfv4MiACxQrX2Gpbb3ZyMlv1uWly5W2ifuwhOoBAYFHEyRJ8Q5")
+    const id=localStorage.getItem('id');
+    return this.http.get(`https://fundoonotes.incubation.bridgelabz.com/api/notes/getNotesList?access_token=${id}`)
+  }
+
+  LoginAccess(email:string,password:string){
+    console.log("API for login is working");
+    console.log("email : ",email);
+    console.log("password : ",password);
+    return  this.http.post('https://fundoonotes.incubation.bridgelabz.com/api/user/login', { email, password });
   }
 }

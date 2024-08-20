@@ -30,6 +30,7 @@ export class NotesContainerComponent {
         }
       })
     }
+    
     filterData(){
       this.notesList=this.notesList.filter((item)=>{
          if(item.isArchived==false || item.isDeleted==false)

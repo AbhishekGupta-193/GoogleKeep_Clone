@@ -141,3 +141,9 @@ mat-option{
     font-size: 12px;
     width: 100%;
 }
+
+
+
+input.ng-invalid.ng-touched{
+    border-color: red;
+}
