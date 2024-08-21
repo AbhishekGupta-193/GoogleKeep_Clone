@@ -14,21 +14,39 @@
 <form class="body-top" [formGroup]="addNotesForm" (ngSubmit)="submitForm()">
     <div class="input-box" (click)="expandInputBox()" [ngClass]="{'expanded': isExpanded}">
         <input *ngIf="!isExpanded" type="text" placeholder="Take a note..." id="mainInput">
-        <div *ngIf="isExpanded" id="additionalInputs">
-            <input type="text" placeholder="Title" id="titleInput" formControlName="title" required>
-            <textarea placeholder="Description" id="descriptionInput" formControlName="description" required></textarea>
-        </div>
-        <div class="tools">
-            <button style="border: none;outline: none;background-color: white;" [disabled]="!addNotesForm.valid">
-                <img src="../assets/WriteNotes/checkbox.svg" type="submit">
-            </button>
+
+        <div *ngIf="!isExpanded" class="tools">
+            <img src="../assets/WriteNotes/checkbox.svg">
             <img src="../assets/WriteNotes/edit.svg">
             <img src="../assets/WriteNotes/gallery.svg">
         </div>
+        <div *ngIf="isExpanded" class="expanded-input-box">
+            <div class="contents">
+                <div id="additionalInputs">
+                    <input type="text" placeholder="Title" id="titleInput" formControlName="title" required>
+                    <textarea placeholder="Take a note..." id="descriptionInput" formControlName="description"
+                        required></textarea>
+                </div>
+                <div class="pinned">
+                    <img src="../assets/noteCard/pinned.svg">
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="images">
+                    <img src="../assets/noteCard/alert.svg">
+                    <img src="../assets/noteCard/add.svg">
+                    <img src="../assets/noteCard/palette.svg">
+                    <img src="../assets/noteCard/image.svg">
+                    <img src="../assets/noteCard/archive.svg">
+                    <img src="../assets/noteCard/verticalDots.svg">
+                    <img src="../assets/noteCard/leftArrow.png">
+                    <img src="../assets/noteCard/rightArrow.png">
+                </div>
+                <button type="submit" class="close" [disabled]="!addNotesForm.valid" >Close</button>
+            </div>
+        </div>
     </div>
 </form>
-
-
 
 <div class="body-bottom">
     <router-outlet></router-outlet>

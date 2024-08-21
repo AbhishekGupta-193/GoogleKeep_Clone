@@ -46,13 +46,57 @@ img{
     margin-left: 4%;
 }
 
-.input-box.expanded {
+/* .input-box.expanded {
     height: 120px; 
-}
+} */
 
 #additionalInputs {
+    /* border: 2px solid yellow; */
     display: flex;
     flex-direction: column;
     margin-top: 10px;
+    width: 80%;
+}
+.pinned{
+    display: flex;
+    width: 20%;
+    justify-content: flex-end;
+    margin: 1%;
+}
+.pinned img{
+    height: 26px;
+    width: 26px;
+}
+.expanded-input-box{
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.contents{
+    /* border: 2px solid blue; */
+    display: flex;
+    flex-direction: row;
+}
+.bottom{
+    /* border: 2px solid blue; */
+    display: flex;  
+    margin: 2%;
+}
+.images{
+    display: flex;
+    justify-content: space-between;
     width: 70%;
+}
+.close{
+    display: flex;
+    width: 30%;
+    border: none;
+    background-color: white;
+    justify-content: flex-end;
+    margin-right: 3%;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-weight: 500;
+    color: rgb(77, 76, 76);
+    font-size: 15px;
 }

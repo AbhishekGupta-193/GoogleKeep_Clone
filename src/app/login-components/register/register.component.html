@@ -28,8 +28,8 @@
 
                 <div class="buttons">
                     <button type="submit" class="createBtn" [disabled]="!signupForm.valid">{{step.button}}</button>
-                    <button type="button"class="nextBtn" (click)="goToNextStep()"
-                        *ngIf="currentStepIndex < steps.length">Next</button>
+                    <button [ngClass]="{'content_disappar': !step.nextButton }"type="button"class="nextBtn" (click)="goToNextStep()"
+                        *ngIf="currentStepIndex < steps.length">{{step.nextButton}}</button>
                 </div>
             </form>
         </div>

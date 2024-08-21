@@ -71,6 +71,7 @@ export class RegisterComponent {
         { content1: '' },
         { content2: '' }
       ],
+      nextButton:'Next',
       button: ''
     },
     {
@@ -90,6 +91,7 @@ export class RegisterComponent {
         { content1: '' },
         { content2: '' }
       ],
+      nextButton:'Next',
       button: ''
     },
     {
@@ -109,6 +111,7 @@ export class RegisterComponent {
         { content1: '' },
         { content2: '' }
       ],
+      nextButton:'Next',
       button: ''
     },
     {
@@ -129,6 +132,7 @@ export class RegisterComponent {
         { content1: '' },
         { content2: '' }
       ],
+      nextButton:'',
       button: 'Submit'
     }
   ];
