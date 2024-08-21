@@ -41,8 +41,8 @@
                             </div>
                         </div>
                     </mat-card>
-
-                    <button class="nextBtn" [disabled]="!loginForm.valid">Submit</button>
+                    <!-- button disabled doubt resolved - because of css on class button -->
+                    <button type="submit" class="nextBtn" [disabled]="!loginForm.valid">Submit</button>
                 </div>
             </form>
 

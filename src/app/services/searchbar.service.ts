@@ -11,11 +11,4 @@ export class SearchbarService {
   updateData(data: string) {
     this.dataSubject.next(data);
   }
-
-  // input_data:string='';
-  // constructor() { }
-
-  // changeSearchTerm():string{
-  //   return this.input_data;
-  // }
 }
