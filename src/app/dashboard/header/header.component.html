@@ -7,7 +7,7 @@
 
     <span class="searchBar">
         <i class='material-icons'>&#xe8b6;</i>
-        <input class="searchinput" placeholder="search" type="text" id="search" onkeyup="onSearch()" />
+        <input class="searchinput" placeholder="search" type="text" id="search" [(ngModel)]="searchedItem" (keyup)="onSearch()" />
     </span>
 
     <div class="tools">

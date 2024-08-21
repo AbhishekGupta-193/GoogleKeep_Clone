@@ -1,5 +1,6 @@
-import { Component, Output ,EventEmitter} from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
+import { SearchbarService } from 'src/app/services/searchbar.service';
 
 @Component({
   selector: 'app-trash',
@@ -7,9 +8,11 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./trash.component.css']
 })
 export class TrashComponent {
+  searchedItem:string='';
+
   @Output() title = new EventEmitter();
   notesList!: any[];
-  constructor(private http: HttpService) { }
+  constructor(private http: HttpService,private searchService:SearchbarService) { }
 
   ngOnInit(): void {
     this.http.getAllNotes().subscribe({
@@ -21,6 +24,11 @@ export class TrashComponent {
       error: (err: string) => {
         console.log("err", err);
       }
+    })
+
+    //SearchService for Search Bar in Header
+    this.searchService.currentData.subscribe(data => {
+      this.searchedItem = data;
     })
   }
   filterData() {

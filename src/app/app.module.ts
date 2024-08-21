@@ -27,6 +27,7 @@ import { MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { PipePipe } from './pipes/pipe.pipe';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     DashComponent,
     RegisterComponent,
     ArchiveComponent,
-    TrashComponent
+    TrashComponent,
+    PipePipe
   ],
   imports: [
     BrowserModule,

@@ -9,11 +9,12 @@
 
 <!-- <p style="margin-top: 300px;"> hiiiiii</p> -->
 
+<!-- <h1 [(ngModel)="searchedItem"]>{{searchedItem}}</h1> -->
 <div class="notesContainer">
-    <div *ngFor="let note of notesList">
+    <div *ngFor="let note of notesList | searchFilter:searchedItem">
         <div class="noteCard">
             <div class="contents">
-                <div class="content">
+                <div class="content">y
                     <span>{{note.title}}</span>
                     <span>{{note.description}}</span>
                 </div>
