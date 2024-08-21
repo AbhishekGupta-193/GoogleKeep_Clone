@@ -19,7 +19,7 @@
     /* margin-top: 5%; */
 }
 
-input{
+input,textarea{
     border: none;
     border-radius: 10px;
     margin-left: 2%;
@@ -44,4 +44,15 @@ img{
     /* border: 2px solid yellow; */
     align-items: center;
     margin-left: 4%;
+}
+
+.input-box.expanded {
+    height: 120px; 
+}
+
+#additionalInputs {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 70%;
 }

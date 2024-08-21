@@ -1,14 +1,35 @@
-<div class="body-top">
-    <div class="input-box">
-        <!-- <input type="text" placeholder="Take a note..." (keyup.enter)="addNote($event)"> -->
-        <input type="text" placeholder="Take a note...">
+<!-- <div class="body-top">
+    <div class="input-box"> -->
+<!-- <input type="text" placeholder="Take a note..." (keyup.enter)="addNote($event)"> -->
+<!-- <input type="text" placeholder="Take a note...">
         <div class="tools">
             <img src="../assets/WriteNotes/checkbox.svg">
             <img src="../assets/WriteNotes/edit.svg">
             <img src="../assets/WriteNotes/gallery.svg">
         </div>
     </div>
-</div>
+</div> -->
+
+<!-- <form class="body-top" [formGroup]="addNotesForm" (ngSubmit)="submitForm()" (click)="collapseInputBox($event)"> -->
+<form class="body-top" [formGroup]="addNotesForm" (ngSubmit)="submitForm()">
+    <div class="input-box" (click)="expandInputBox()" [ngClass]="{'expanded': isExpanded}">
+        <input *ngIf="!isExpanded" type="text" placeholder="Take a note..." id="mainInput">
+        <div *ngIf="isExpanded" id="additionalInputs">
+            <input type="text" placeholder="Title" id="titleInput" formControlName="title" required>
+            <textarea placeholder="Description" id="descriptionInput" formControlName="description" required></textarea>
+        </div>
+        <div class="tools">
+            <button style="border: none;outline: none;background-color: white;" [disabled]="!addNotesForm.valid">
+                <img src="../assets/WriteNotes/checkbox.svg" type="submit">
+            </button>
+            <img src="../assets/WriteNotes/edit.svg">
+            <img src="../assets/WriteNotes/gallery.svg">
+        </div>
+    </div>
+</form>
+
+
+
 <div class="body-bottom">
     <router-outlet></router-outlet>
 </div>

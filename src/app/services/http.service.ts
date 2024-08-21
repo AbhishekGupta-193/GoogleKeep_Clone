@@ -25,4 +25,10 @@ export class HttpService {
     console.log("API for Signup is working");
     return this.http.post('https://fundoonotes.incubation.bridgelabz.com/api/user/userSignUp', signupData);
   }
+
+  addNotes(title:string,description:string){
+    console.log("API for addNotes is working");
+    const id=localStorage.getItem('id');
+    return  this.http.post(`https://fundoonotes.incubation.bridgelabz.com/api/notes/addNotes?access_token=${id}`, { title, description });
+  }
 }
